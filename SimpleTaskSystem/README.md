@@ -1,13 +1,11 @@
-A 'Simple Task System' application built with ASP.NET Boilerplate.
+Sistema de Catálogo e Listagem de Veículos
 
-This is the most complete example project. Includes three web projects:
+Para inserir um novo veículo basta clical em "Novo" e inserir as informações, além de fotos do veículo.
 
-* One uses **AngularJs** as frontend framework and **EntityFramework** as ORM.
-* One uses **DurandalJs** as frontend framework and **Nhibernate** as ORM.
-* And a console application (SimpleTaskSystem.ConsoleApp) to simply show how to bootstrap ABP and use an application service in a Console application.
+As fotos devem ser inseridas uma por vez, primeiro fazendo o upload e depois clicando no botão "Incluir Foto".
 
-All projects share same Domain ve Application layers. Sample projects are documented in detail in these Codeproject articles:
+Elas podem ser retiradas clicando no "x" em vermelho ao lado do nome da foto. Após criar o veículo ele pode ser editado. Podem ser inseridas ou retiradas fotos pela tela de edição também.
 
-* Angular&EF version: http://www.codeproject.com/Articles/791740/Using-AngularJs-ASP-NET-MVC-Web-API-and-EntityFram
-* Durandal&NH version: http://www.codeproject.com/Articles/768664/Introduction-to-ASP-NET-Boilerplate
-* Unit Testing for this project: http://www.codeproject.com/Articles/871786/Unit-testing-in-Csharp-using-xUnit-Entity-Framewor
+Os veículos também podem ser visualizados, clicando em "Visualizar" no meno dropdown da tabela.
+
+A aplicação foi feita usando o template do ASP.NET Boilerplate. https://aspnetboilerplate.com/

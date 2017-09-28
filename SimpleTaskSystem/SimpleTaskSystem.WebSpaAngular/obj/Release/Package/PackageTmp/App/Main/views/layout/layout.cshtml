@@ -1,0 +1,75 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cadastro de Veículos - Otimiza</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/select.min.js"></script>
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <link href="~/Content/select.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/App/Main/images/favicon.ico">
+    <script src="~/Scripts/fileUploader.js"></script>
+    <base href="@Url.Content("~/")" />
+
+    @Styles.Render("~/Bundles/App/vendor/css")
+    @Styles.Render("~/Bundles/App/Main/css")
+    
+
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/flags/css")
+    @Styles.Render("~/fonts/css")
+    
+    
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+        <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+    <![endif]-->
+
+    @Scripts.Render("~/Bundles/App/vendor/js")
+    
+    <script>
+        //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+    </script>
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?type=angular"></script>
+    <script src="~/AbpScripts/GetScripts" type="text/javascript"></script>
+
+    @Scripts.Render("~/Bundles/App/Main/js")
+    
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="app.views.layout as vm">
+            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+            <div class="container">
+                <div class="angular-animation-container row">
+                    <div ui-view class="shuffle-animation col-xs-12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

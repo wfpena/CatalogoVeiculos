@@ -1,0 +1,62 @@
+﻿<style>
+    .btn-main {
+        float: left !important;
+        margin: 30px;
+        margin-left: 55px;
+    }
+
+    table a{
+        text-decoration:none !important;
+    }
+    
+</style>
+
+<div style="padding-bottom:50px" class="panel panel-default" ng-controller="VehicleCtrl as vm">
+
+    <div class="panel-heading" style="position: relative;">
+        <div class="row">
+            <!-- Title -->
+            <h3 class="panel-title col-xs-6">
+                Lista de Veiculos
+            </h3>
+        </div>
+    </div>
+
+    <button type="button" data-toggle="modal" class="btn btn-primary btn-circle waves-effect waves-circle waves-float btn-main" ng-click="vm.openVehicleCreationModal()">
+        Novo
+    </button>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div style="padding-bottom:110px" class="body table-responsive">
+                <table style="width:90%;margin:auto" class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Tipo de Veículo</th>
+                            <th>Proprietário</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="vehicle in vm.vehicles">
+                            <td>{{vehicle.placa}}</td>
+                            <td>{{vehicle.tipoVeiculo.nome}}</td>
+                            <td>{{vehicle.proprietario}}</td>
+                            <td class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a  ng-href="#!/viewVehicle/{{vehicle.id}}" class="waves-effect waves-block"><i class="fa fa-eye" aria-hidden="true"></i> <span>Visualizar</span></a></li>
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.openVehicleEditModal(vehicle)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span> Editar</span></a></li>
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.deleteVehicle(vehicle)"><i class="fa fa-trash-o" aria-hidden="true"></i><span> Deletar</span></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </div>
+</div>

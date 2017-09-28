@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="webapps01-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\User\\Documents\\Visual\ Studio\ 2015\\Projects\\SimpleTaskSystem\\SimpleTaskSystem\.WebSpaAngular\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\User\\Documents\\Visual\ Studio\ 2015\\Projects\\SimpleTaskSystem\\SimpleTaskSystem\.WebSpaAngular\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Default-Web.config Connection String" description="" value="Data Source=SQL5019.SmarterASP.NET;Initial Catalog=DB_A2AED3_webapps01DB;User ID=DB_A2AED3_webapps01DB_admin;Password=webpass01db" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Documents\\Visual\ Studio\ 2015\\Projects\\SimpleTaskSystem\\SimpleTaskSystem\.WebSpaAngular\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Default']/@connectionString" />
+  </parameter>
+</parameters>

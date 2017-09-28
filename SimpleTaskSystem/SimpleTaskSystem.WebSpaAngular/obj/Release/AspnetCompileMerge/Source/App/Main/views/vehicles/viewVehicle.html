@@ -1,0 +1,34 @@
+﻿<style>
+    .ui-select-choices {
+        opacity: 1 !important;
+    }
+    .btn-default {
+        background-color: white;
+        color: black;
+        border-color: lightgrey;
+    }
+    .brn-default:hover {
+        background-color: #adadad;
+    }
+</style>
+
+    <div class="modal-header">
+        <h3 class="modal-title">
+            <span><a ng-href="#!/vehicles"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>Visualizar  {{vm.vehicle.placa}}</span>
+        </h3>
+    </div>
+<div style="display:inline-block">
+    <div style="float:left">
+        <h4>Placa: {{vm.vehicle.placa}}</h4>
+        <h4>Tipo de Veículo: {{vm.vehicle.tipoVeiculo.nome}}</h4>
+    </div>
+    <div style="float:right;margin-left:200px">
+        <h4>Proprietário: {{vm.vehicle.proprietario}}</h4>
+    </div>
+</div>
+<div>
+    <span ng-repeat="image in vm.vehicle.imagens">
+        <img style="padding:20px;max-height:300px" ng-src="/App/Main/images/{{image}}" />
+    </span>
+</div>
+

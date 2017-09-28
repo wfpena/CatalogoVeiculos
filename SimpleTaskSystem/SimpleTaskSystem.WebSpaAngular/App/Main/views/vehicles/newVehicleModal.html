@@ -1,0 +1,92 @@
+﻿<style>
+    .ui-select-choices {
+        opacity: 1 !important;
+    }
+    .btn-default {
+        background-color: white;
+        color: black;
+        border-color: lightgrey;
+    }
+    .btn-default:hover {
+        background-color: #adadad;
+    }
+
+    .ui-select-match {
+        border: solid 1px lightgray;
+    }
+</style>
+
+<form id="frm_create_user" name="userCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>Cadastro de Veículos</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <uib-tabset class="tab-container tabbable-line">
+            <uib-tab heading="Veiculos">
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label for="username" class="form-label">Placa</label>
+                                <input id="username" type="text" name="UserName" ng-model="vm.vehicle.placa" required maxlength="32" minlength="2" class="validate form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label for="name" class="form-label">Tipo de Veículo</label>
+                                <ui-select ng-model="vm.vehicle.tipoVeiculo">
+                                    <ui-select-match placeholder="Tipo de Veiculo...">{{$select.selected.nome}}</ui-select-match>
+                                    <ui-select-choices repeat="tv in vm.types">
+                                       <div ng-bind="tv.nome"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                                    
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label for="surname" class="form-label">Proprietário</label>
+                                <input id="surname" type="text" name="Surname" ng-model="vm.vehicle.proprietario" required maxlength="32" class="validate form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label ng-show="vm.images.length!=0" for="email" class="form-label">Fotos Adicionadas:</label>
+                                <div ng-repeat="image in vm.images">
+                                    {{image}} <i style="color:red;cursor:pointer" class="fa fa-times" aria-hidden="true" ng-click="vm.removeImage(image,$index)"></i>
+                                </div>
+                                <!--<input id="email" type="email" name="EmailAddress" ng-model="vm.vehicle.foto" maxlength="256" class="validate form-control">-->
+                                <label for="email" class="form-label">Carregar foto do veículo:</label>
+                                <input type="file" name="attachment" class="form-control" data-ak-file-model="tutorial.attachment" multiple/>
+                                <input style="margin: 10px 0 0;" type="button" class="btn btn-primary" value="Incluir Foto" data-ng-click="vm.saveTutorial(tutorial)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            Cancelar
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()">
+            Salvar
+        </button>
+    </div>
+</form>
